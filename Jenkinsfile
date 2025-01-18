@@ -2,7 +2,7 @@ node {
     checkout scm
     stage('Build') {
         docker.image('python:3.9-alpine').inside('-u root') {
-            sh 'python -m py_compile ./sources/add2vals.py ./sources/calc.py'
+            sh 'python -m py_compile sources/add2vals.py sources/calc.py'
         }
     }
     stage('Test') {
