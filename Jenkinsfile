@@ -1,4 +1,7 @@
 node {
+  stage('Checkout') {
+    checkout scm
+  }
   stage('Build') {
     docker.image('python:3.9-alpine').inside {
       sh 'echo "Workspace luar: ${WORKSPACE}"'
