@@ -3,7 +3,7 @@ node {
     checkout scm
   }
   stage('Build') {
-    docker.image('python:3.9-alpine').inside {
+    docker.image('python:3.9-alpine').inside('-u root') {
       sh 'echo "Workspace luar: ${WORKSPACE}"'
       sh 'pwd'
       sh 'ls -la sources'
