@@ -3,6 +3,7 @@ node {
     docker.image('python:3.9-alpine').inside {
       sh 'echo "Workspace luar: ${WORKSPACE}"'
       sh 'pwd'
+      sh 'ls -la ./sources'
       sh 'python -m py_compile ./sources/add2vals.py ./sources/calc.py'
     }
   }
