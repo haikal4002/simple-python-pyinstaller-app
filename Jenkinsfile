@@ -1,8 +1,4 @@
 node {
-    // Pemicu (Triggers) DITEMPATKAN DI LUAR stage
-    triggers {
-        pollSCM('H/2 * * * *') // Memeriksa perubahan SCM setiap 2 menit
-    }
     stage('Checkout') {
         checkout scm
     }
